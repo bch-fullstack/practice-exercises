@@ -1,6 +1,0 @@
-hello world 
-this is a samnple content for the note.txt
-
-
-goodbye 
-this is the end
