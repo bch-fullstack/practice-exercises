@@ -7,12 +7,27 @@
         
         const users = getUsers();
         users.forEach(addUser)
+
+        const oldestPerson = getOldest(users);
+        console.log('The oldest person is ', oldestPerson.name, oldestPerson.age)
     });
 
     secondTime = new Date().getTime();
+    
     console.log('hello from anonymous fn', secondTime)
-
 })()
+
+function getOldest(userObjs) {
+    let oldest = userObjs[0];
+
+    for (let i = 1; i < userObjs.length; i++) {
+        if (userObjs[i].age > oldest.age) {
+            oldest = userObjs[i]
+        }
+    }
+
+    return oldest;
+}
 
 function addUser(userObj) {
     let newRow = document.createElement('tr');
